@@ -3,13 +3,13 @@
 from __future__ import print_function
 
 info="""
-Allow use of system vtk from a virtualenv
+Allow use of system libtorrent from a virtualenv
 Should work on all platforms.
 
 report bugs to https://github.com/stuaxo/vext
 """
 
-version="0.5.20"
+version="0.6.1"
 vext_version="vext>=%s" % version
 
 
@@ -35,7 +35,7 @@ class Install(install):
         # if ran from some setup.py then vexts own setup will take care of this...
         #
         # TOOD - Move this code to a common place.
-        print("vext.vtk Install")
+        print("vext.libtorrent Install")
         if sys.prefix == '/usr':
             print("Not installing PTH file to real prefix")
             return
@@ -44,7 +44,7 @@ class Install(install):
         self.execute(_post_install, [self], msg="Install vext files:")
 
 setup(
-    name='vext.vtk',
+    name='vext.libtorrent',
     version=version,
     description='Use system Libtorrent from a virtualenv',
     long_description=info,
